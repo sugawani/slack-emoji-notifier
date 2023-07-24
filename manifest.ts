@@ -10,7 +10,7 @@ import RenameWorkflow from "./workflows/rename.ts";
  * https://api.slack.com/automation/manifest
  */
 export default Manifest({
-  name: "new-emoji-notifier",
+  name: "slack-emoji-notifier",
   description: "Notify when emoji are changed",
   icon: "assets/app_icon.png",
   workflows: [
