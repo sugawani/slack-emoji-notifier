@@ -9,6 +9,9 @@ const RemoveWorkflow = DefineWorkflow({
     properties: {
       names: {
         type: Schema.types.array,
+        items: {
+          type: Schema.types.string,
+        },
       },
     },
     required: ["names"],
