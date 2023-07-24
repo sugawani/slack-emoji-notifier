@@ -2,7 +2,7 @@ import { DefineWorkflow, Schema } from "deno-slack-sdk/mod.ts";
 import { SendMessageFunction } from "../functions/send_message.ts";
 
 const RemoveWorkflow = DefineWorkflow({
-  callback_id: "notify_workflow",
+  callback_id: "remove_workflow",
   title: "Notify emoji removed",
   description: "Notify emoji removed",
   input_parameters: {
