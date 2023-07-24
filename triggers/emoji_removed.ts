@@ -9,6 +9,12 @@ const emojiRemovedTrigger: Trigger<typeof RemoveWorkflow.definition> = {
   workflow: "#/workflows/remove_workflow",
   event: {
     event_type: "slack#/events/emoji_changed",
+    filter: {
+      version: 1,
+      root: {
+        statement: "{{data.subtype}} == remove",
+      },
+    },
   },
   inputs: {
     names: {

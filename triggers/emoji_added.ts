@@ -9,6 +9,12 @@ const emojiAddedTrigger: Trigger<typeof AddWorkflow.definition> = {
   workflow: "#/workflows/add_workflow",
   event: {
     event_type: "slack#/events/emoji_changed",
+    filter: {
+      version: 1,
+      root: {
+        statement: "{{data.subtype}} == add",
+      },
+    },
   },
   inputs: {
     name: {

@@ -9,6 +9,12 @@ const emojiRenamedTrigger: Trigger<typeof RenameWorkflow.definition> = {
   workflow: "#/workflows/rename_workflow",
   event: {
     event_type: "slack#/events/emoji_changed",
+    filter: {
+      version: 1,
+      root: {
+        statement: "{{data.subtype}} == rename",
+      },
+    },
   },
   inputs: {
     old_name: {
