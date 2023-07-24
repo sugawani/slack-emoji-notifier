@@ -1,6 +1,8 @@
 import { Manifest } from "deno-slack-sdk/mod.ts";
-import SampleWorkflow from "./workflows/sample_workflow.ts";
-import SampleObjectDatastore from "./datastores/sample_datastore.ts";
+import { SendMessageFunction } from "./functions/send_message.ts";
+import AddWorkflow from "./workflows/add.ts";
+import RemoveWorkflow from "./workflows/remove.ts";
+import RenameWorkflow from "./workflows/rename.ts";
 
 /**
  * The app manifest contains the app's configuration. This
@@ -9,16 +11,18 @@ import SampleObjectDatastore from "./datastores/sample_datastore.ts";
  */
 export default Manifest({
   name: "new-emoji-notifier",
-  description: "A template for building Slack apps with Deno",
-  icon: "assets/default_new_app_icon.png",
-  workflows: [SampleWorkflow],
-  outgoingDomains: [],
-  datastores: [SampleObjectDatastore],
+  description: "Notify when emoji are changed",
+  icon: "assets/app_icon.png",
+  workflows: [
+    AddWorkflow,
+    RemoveWorkflow,
+    RenameWorkflow,
+  ],
+  functions: [SendMessageFunction],
   botScopes: [
     "commands",
     "chat:write",
     "chat:write.public",
-    "datastore:read",
-    "datastore:write",
+    "emoji:read",
   ],
 });
