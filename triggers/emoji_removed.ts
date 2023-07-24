@@ -6,7 +6,7 @@ const emojiRemovedTrigger: Trigger<typeof RemoveWorkflow.definition> = {
   type: TriggerTypes.Event,
   name: "Notify emoji removed",
   description: "Notify emoji removed",
-  workflow: "#/workflows/notify_workflow",
+  workflow: "#/workflows/remove_workflow",
   event: {
     event_type: "slack#/events/emoji_changed",
   },

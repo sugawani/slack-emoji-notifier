@@ -6,7 +6,7 @@ const emojiRenamedTrigger: Trigger<typeof RenameWorkflow.definition> = {
   type: TriggerTypes.Event,
   name: "Notify emoji renamed",
   description: "Notify emoji renamed",
-  workflow: "#/workflows/notify_workflow",
+  workflow: "#/workflows/rename_workflow",
   event: {
     event_type: "slack#/events/emoji_changed",
   },
