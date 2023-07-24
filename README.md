@@ -9,7 +9,9 @@
   - [slack cli のインストール](#slack-cli-のインストール)
   - [通知先チャンネルの設定](#通知先チャンネルの設定)
 - [ローカルでの実行](#ローカルでの実行)
-- [デプロイ](#デプロイ)
+- [slack platform 上での実行](#slack-platform-上での実行)
+  - [環境変数の設定](#環境変数の設定)
+  - [デプロイ](#デプロイ)
 
 # Slack Emoji notifier
 
@@ -47,7 +49,14 @@ https://api.slack.com/automation/quickstart
 `slack run` を実行し、動かしたい Trigger を指定してください  
 他の Trigger も同時に実行したい場合は `slack trigger create` で動かしたい Trigger を指定してください
 
-# デプロイ
+# slack platform 上での実行
+
+## 環境変数の設定
+
+`slack env add NOTIFY_CHANNEL_ID XXXXXXX` を実行し、通知先のチャンネル ID を環境変数に設定してください  
+チャンネル ID はチャンネル詳細下部に `Channel ID: XXXXXXXX` の形で記載されています
+
+## デプロイ
 
 `slack deploy` を実行し、動かしたい Trigger を指定してください  
 他の Trigger も同時に実行したい場合は `slack trigger create` で動かしたい Trigger を指定してください
